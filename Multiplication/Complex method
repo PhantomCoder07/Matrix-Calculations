@@ -1,0 +1,80 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k,r1,r2,c1,c2;
+    for (i=0; ; i++)
+    {
+        printf ("Enter 1st matrix row size: ");
+        scanf ("%d",&r1);
+        printf ("Enter 1st matrix column size: ");
+        scanf ("%d",&c1);
+        printf ("\nEnter 2nd matrix row size: ");
+        scanf ("%d",&r2);
+        printf ("Enter 2nd matrix column size: ");
+        scanf ("%d",&c2);
+        if (c1==r2)
+            break;
+        else
+        {
+            printf ("\nError 404 (Can't Calculate try again)\n");
+            printf("---------------------------------------\n");
+            continue;
+        }
+    }
+    int mat1[r1][c1],mat2[r2][c2],matm[r1][c2];
+    printf ("\nEnter 1st matrix: \n");
+    for (i=0; i<r1; i++)
+    {
+        for (j=0; j<c1; j++)
+        {
+            scanf ("%d",&mat1[i][j]);
+        }
+    }
+    printf ("Enter 2nd matrix: \n");
+    for (i=0; i<r2; i++)
+    {
+        for (j=0; j<c2; j++)
+        {
+            scanf ("%d",&mat2[i][j]);
+        }
+    }
+    printf ("The 1st matrix: \n");
+    for (i=0; i<r1; i++)
+    {
+        for (j=0; j<c1; j++)
+        {
+            printf ("%d ",mat1[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("The 2nd matrix: \n");
+    for (i=0; i<r2; i++)
+    {
+        for (j=0; j<c2; j++)
+        {
+            printf ("%d ",mat2[i][j]);
+        }
+        printf ("\n");
+    }
+    printf ("The result of multiplication: \n");
+    for (i=0; i<r1; i++)
+    {
+        for (j=0; j<c2; j++)
+        {
+            matm[i][j]=0;
+            for (k=0; k<c1; k++)
+            {
+                matm[i][j] = matm[i][j] + (mat1[i][k] * mat2[k][j]);
+            }
+        }
+    }
+    for (i=0; i<r1; i++)
+    {
+        for (j=0; j<c2; j++)
+        {
+            printf ("%d ",matm[i][j]);
+        }
+        printf ("\n");
+    }
+    return 0;
+}
