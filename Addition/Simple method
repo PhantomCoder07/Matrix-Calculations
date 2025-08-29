@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,r,c;
+    printf ("Enter matrix row: ");
+    scanf ("%d",&r);
+    printf ("Enter matrix column: ");
+    scanf ("%d",&c);
+    int mat1[r][c],mat2[r][c],mats[r][c];
+    printf ("Enter 1st Matrix:\n");
+    for (i=0; i<r; i++)
+    {
+        for (j=0; j<c; j++)
+        {
+            scanf ("%d",&mat1[i][j]);
+        }
+    }
+    printf ("Enter 2nd Matrix:\n");
+    for (i=0; i<r; i++)
+    {
+        for (j=0; j<c; j++)
+        {
+            scanf ("%d",&mat2[i][j]);
+        }
+    }
+    printf ("The sum of 2 Matrix:\n");
+    for (i=0; i<r; i++)
+    {
+        for (j=0; j<c; j++)
+        {
+            mats[i][j]=mat1[i][j]+mat2[i][j];
+            printf ("%d ",mats[i][j]);
+        }
+        printf ("\n");
+    }
+    return 0;
+}
